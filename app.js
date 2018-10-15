@@ -23,11 +23,13 @@ app.get('/repeat/:saying/:times', function(req, res){
   console.log(parseInt(req.params.times))
   var say = req.params.saying;
   var times = parseInt(req.params.times);
+  var message = "";
 
+  for (var i =0; i < parseInt(times); i++){
+    message += say + " "
+  }
 
-  // for (var i =0; i < parseInt(times); i++){
-    res.send(say)
-  // }
+    res.send(message)
 })
 
 app.get('/*', function(rea, res){
